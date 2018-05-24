@@ -146,12 +146,13 @@ public class VisibleDelegate {
 
         if (visible) {
             if (checkAddState()) return;
-            mSupportF.onSupportVisible();
+           // mSupportF.onSupportVisible();
 
             if (mIsFirstVisible) {
                 mIsFirstVisible = false;
                 mSupportF.onLazyInitView(mSaveInstanceState);
-            }
+            } 
+            mSupportF.onSupportVisible();
             dispatchChild(true);
         } else {
             dispatchChild(false);
